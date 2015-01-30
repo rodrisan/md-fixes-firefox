@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "manoderecha",
+  "version": "0.1",
+  
+  "description": "Manipulates the DOM to set the height of PDF attachments in manoderecha",
+  "icons": { "16": "icon.png", "128": "icon.png" },
+
+  "offline_enabled": true,
+
+  "browser_action": {
+    "name": "manoderecha",
+    "icons": ["icon.png"],
+    "default_icon": "icon.png"
+  },
+  
+  "content_scripts": [ {
+    "js": [ "jquery-1.11.2.min.js", "background.js" ],
+    "matches": [ "http://manoderecha.net/md/index.php/file/*", "https://manoderecha.net/md/index.php/file/*"]
+  }]
+}
