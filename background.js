@@ -17,18 +17,27 @@ $(function(){
     var $header = $('#file-toolbar');
     var $content = $('embed');
 
+	// Check file extension
 	var $src = $content.attr('src');
-	if ($src.toLowerCase().indexOf(".txt") >= 0){
-		$('embed').changeElementType('iframe');
-		var $content = $('iframe');
+	if (typeof $src !== "undefined"){
+		var $extension = $src.substr( ($src.lastIndexOf('.') +1) );
+		
+		switch($extension){
+			case 'txt':
+			case 'sql':
+			case 'csv':
+				$('embed').changeElementType('iframe');
+				var $content = $('iframe');
+			break;
+		}
+		
+		var $window = $(window).on('resize', function(){
+			var height = $(this).height() - $header.outerHeight() - 9;
+			$content.css('margin-top', $header.outerHeight());
+			$content.css('width', "100%");
+			$content.css('border', '0', 'important');
+			$content.height(height);
+		}).trigger('resize'); //on page load
 	}
-	
-    var $window = $(window).on('resize', function(){
-		var height = $(this).height() - $header.outerHeight() - 9;
-		$content.css('margin-top', $header.outerHeight());
-		$content.css('width', "100%");
-		$content.css('border', '0', 'important');
-		$content.height(height);
-    }).trigger('resize'); //on page load
 	
 });
