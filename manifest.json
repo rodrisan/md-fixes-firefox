@@ -16,6 +16,6 @@
   
   "content_scripts": [ {
     "js": [ "jquery-1.11.2.min.js", "background.js" ],
-    "matches": [ "http://manoderecha.net/md/index.php/file/*", "https://manoderecha.net/md/index.php/file/*"]
+    "matches": [ "http://manoderecha.net/*", "https://manoderecha.net/*"]
   }]
 }
