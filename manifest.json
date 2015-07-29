@@ -15,7 +15,7 @@
   },
   
   "content_scripts": [ {
-    "js": [ "jquery-1.11.2.min.js", "background.js" ],
-    "matches": [ "http://manoderecha.net/*", "https://manoderecha.net/*"]
+    "js": [ "jquery-1.11.2.min.js", "background.js", "iemagic.js", "shim.js", "jszip.js", "xlsx.js","xls.js" ],
+    "matches": [ "http://*.manoderecha.net/*", "https://*.manoderecha.net/*"]
   }]
 }
