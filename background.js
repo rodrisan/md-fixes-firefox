@@ -84,7 +84,7 @@ $(function() {
     var csv = "";
 
     function parse_xlsx($src) {
-        $("#wrapper").append('<div style="display:none;" id="fileurl"></div><pre id="out"></pre><div id="CSVTable"></div>');
+        $("#wrapper").append('<div style="display:none;" id="fileurl"></div><div id="out"></div><div id="CSVTable"></div>');
         $("#out").html("<b>Cargando...</b>");
         $("#out").css('margin-top', $header.outerHeight());
 
@@ -104,6 +104,7 @@ $(function() {
         function process_wb(wb) {
             var output = to_csv(wb);
             var table = document.createElement("table");
+            table.className = "table table-striped table-bordered";
             var rows = output.split("\n");
             for (var i = 0; i < rows.length; i++) {
                 var row = table.insertRow(-1);
@@ -153,7 +154,7 @@ $(function() {
     }
 
     function parse_xls($src) {
-        $("#wrapper").append('<div style="display:none;" id="fileurl"></div><pre id="out"></pre><div id="CSVTable"></div>');
+        $("#wrapper").append('<div style="display:none;" id="fileurl"></div><div id="out"></div><div id="CSVTable"></div>');
         $('embed').hide();
         $("#out").html("<b>Cargando...</b>");
         $("#out").css('margin-top', $header.outerHeight());
@@ -164,8 +165,6 @@ $(function() {
             workbook.SheetNames.forEach(function(sheetName) {
                 csv = XLS.utils.make_csv(workbook.Sheets[sheetName]);
                 if (csv.length > 0) {
-                    //result.push("SHEET: " + sheetName);
-                    //result.push("");
                     result.push(csv);
                 }
             });
@@ -175,6 +174,7 @@ $(function() {
         function process_wb(wb) {
             var output = to_csv(wb);
             var table = document.createElement("table");
+            table.className = "table table-striped table-bordered";
             var rows = output.split("\n");
             for (var i = 0; i < rows.length; i++) {
                 var row = table.insertRow(-1);
@@ -205,7 +205,7 @@ $(function() {
     }
 
     function parse_csv($content, $src) {
-        $("#wrapper").append('<div style="display:none;" id="fileurl"></div><pre id="out"></pre><div id="CSVTable"></div>');
+        $("#wrapper").append('<div style="display:none;" id="fileurl"></div><div id="out"></div><div id="CSVTable"></div>');
         $('embed').hide();
         $("#out").html("<b>Cargando...</b>");
         $("#out").css('margin-top', $header.outerHeight());
@@ -220,6 +220,7 @@ $(function() {
                     var reader = new FileReader();
                     reader.onload = function(e) {
                         var table = document.createElement("table");
+                        table.className = "table table-striped table-bordered";
                         var rows = e.target.result.split("\n");
                         for (var i = 0; i < rows.length; i++) {
                             var row = table.insertRow(-1);
