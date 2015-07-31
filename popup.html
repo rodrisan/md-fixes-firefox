@@ -5,20 +5,36 @@
 		<script src="jquery-1.11.2.min.js"></script>
 		<style type="text/css">
 		body{
-		  min-width:150px;
+		  min-width:200px;
+		  font-size: 12px;
+		  font-family: arial, sans-serif;
 		}
-		a{
-		  color:#000;
-		  text-decoration:none;
+		ul {
+		  padding: 0;
+		  margin: 0;
+		  list-style: none;
 		}
-		a:hover{
-		  text-decoration:underline;
+		li{
+			list-style: none;
+			line-height: 25px;
+			text-align: left;
+			border: 1px #ffffff solid;
+			height: 22px;
+			cursor: pointer;
+		}
+		li:hover{
+		    border-radius: 3px 3px;
+			background: -webkit-gradient(linear, left top, left bottom,
+			color-stop(0, #fff), color-stop(0.4, hsl(214, 66%, 96%)), color-stop(0.41, hsl(212, 47%, 94%)));
+			border: solid 1px #c5cdd3;
 		}
 	</style>
 	</head>
 	 
 	<body>
-		<p><a id="pullrequest" url-task="">Generar pull-request</a></p>
+		<ul>
+			<li id="pullrequest" >Generar pull-request</li>
+		</ul>
 		<script src="popup.js"></script>
 	</body>
 </html>

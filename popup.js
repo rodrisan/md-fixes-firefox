@@ -39,6 +39,7 @@ $(function() {
             e.preventDefault();
             var pullRequestText = "# Tareas relacionadas\n["+titleTask+"]("+urlTask+")\n\n# Descripción del problema\n\n# Descripción de la solución\n\nAntes:\n\nAhora:\n\n# Plan de pruebas\nSe realizó en un entorno local.";
             e.clipboardData.setData('text/plain', pullRequestText);
+            window.close();
         });
     }
 });
