@@ -1,5 +1,12 @@
 $(function(){
 
+    (function($) {
+        $('.cfData:contains("[DD]")').css('background-color', 'yellowgreen');
+        $('.cfData:contains("[DP]")').css('background-color', 'yellowgreen');
+        $('.cfData:contains("[MERGE]")').css('background-color', '#6e5494');
+        $('.cfData:contains("[PR]")').css('background-color', 'orange');
+    })(jQuery);
+
 	(function($) {
 		$.fn.changeElementType = function(newType) {
 			var attrs = {};
