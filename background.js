@@ -1,17 +1,26 @@
-$(function() {
-    // replace the element type
+$(function(){
+
     (function($) {
-        $.fn.changeElementType = function(newType) {
-            var attrs = {};
-            $.each(this[0].attributes, function(idx, attr) {
-                attrs[attr.nodeName] = attr.nodeValue;
-            });
-            this.replaceWith(function() {
-                return $("<" + newType + "/>", attrs).append($(this).contents());
-            });
-        }
+        $('.cfData:contains("[DD]")').css('background-color', 'yellowgreen');
+        $('.cfData:contains("[DP]")').css('background-color', 'yellowgreen');
+        $('.cfData:contains("[MERGE]")').css('background-color', '#6e5494');
+        $('.cfData:contains("[PR]")').css('background-color', 'orange');
     })(jQuery);
-    // Work with files
+
+	(function($) {
+		$.fn.changeElementType = function(newType) {
+			var attrs = {};
+
+			$.each(this[0].attributes, function(idx, attr) {
+				attrs[attr.nodeName] = attr.nodeValue;
+			});
+
+			this.replaceWith(function() {
+				return $("<" + newType + "/>", attrs).append($(this).contents());
+			});
+		}
+	})(jQuery);
+
     var $header = $('#file-toolbar');
     var $content = $('embed');
     // Check file extension
