@@ -1,9 +1,9 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "manoderecha",
-  "version": "0.2",
+  "version": "0.3",
   
-  "description": "Manipulates the DOM to set the height of PDF attachments in manoderecha",
+  "description": "Manipulates the DOM to vitaminize manoderecha's sites",
   "icons": { "16": "icon.png", "128": "icon.png" },
 
   "offline_enabled": true,
@@ -17,7 +17,7 @@
 
   "content_scripts": [ {
     "js": [ "jquery-1.11.2.min.js", "background.js", "iemagic.js", "shim.js", "jszip.js", "xlsx.js","xls.js", "popup.js"],
-    "matches": [ "http://*.manoderecha.net/*", "https://*.manoderecha.net/*"]
+    "matches": [ "http://*.manoderecha.net/*", "https://*.manoderecha.net/*", "http://www.manoderecha.net/*", "https://www.manoderecha.net/*"]
   }],
 
   "permissions": [
