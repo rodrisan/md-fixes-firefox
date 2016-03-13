@@ -4,6 +4,7 @@ $(function(){
         $('.cfData:contains("[DD]")').css('background-color', 'yellowgreen');
         $('.cfData:contains("[DP]")').css('background-color', 'yellowgreen');
         $('.cfData:contains("[MERGE]")').css('background-color', '#6e5494');
+        $('.cfData:contains("[MERGE]")').css('color', '#ffffff');
         $('.cfData:contains("[PR]")').css('background-color', 'orange');
     })(jQuery);
 
