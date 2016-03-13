@@ -6,12 +6,18 @@ $(function(){
         $('.cfData:contains("[MERGE]")').css('background-color', '#6e5494');
         $('.cfData:contains("[MERGE]")').css('color', '#ffffff');
         // Pull-request highlight
-        $('.cfData:contains("[PR]")').css('background-color', 'orange');
+        $('.cfData:contains("[PR]")').css('background-color', '#6cc644');
         var regex = new RegExp("https://github.com/.*/.*/pull/[0-9]."); // expression here
         var $cfData = $(".cfData").filter(function () {
             return regex.test($(this).text());
         });
-        $cfData.css('background-color', 'orange')
+        $cfData.css('background-color', '#6cc644');
+        // itemVisible
+        $('.cfData').each(function() {
+            if( $(this).hasClass('itemVisible') ) {
+                $(this).css('background-color', 'orange');
+            }
+        });
     })(jQuery);
 
 	(function($) {
