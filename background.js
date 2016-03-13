@@ -5,7 +5,13 @@ $(function(){
         $('.cfData:contains("[DP]")').css('background-color', 'yellowgreen');
         $('.cfData:contains("[MERGE]")').css('background-color', '#6e5494');
         $('.cfData:contains("[MERGE]")').css('color', '#ffffff');
+        // Pull-request highlight
         $('.cfData:contains("[PR]")').css('background-color', 'orange');
+        var regex = new RegExp("https://github.com/.*/.*/pull/[0-9]."); // expression here
+        var $cfData = $(".cfData").filter(function () {
+            return regex.test($(this).text());
+        });
+        $cfData.css('background-color', 'orange')
     })(jQuery);
 
 	(function($) {
