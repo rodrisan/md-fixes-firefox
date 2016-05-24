@@ -34,10 +34,19 @@ $(function() {
         $('#pullrequest').click(function(){
             document.execCommand('copy');
         });
+        $('#reference-task').click(function(){
+            document.execCommand('copy');
+        });
 
         document.getElementById('pullrequest').addEventListener('copy', function (e) {
             e.preventDefault();
             var pullRequestText = "# Tareas relacionadas\n["+titleTask+"]("+urlTask+")\n\n# Descripción del problema\n\n# Descripción de la solución\n\nAntes:\n\nAhora:\n\n# Plan de pruebas\nSe realizó en un entorno local.";
+            e.clipboardData.setData('text/plain', pullRequestText);
+            window.close();
+        });
+        document.getElementById('reference-task').addEventListener('copy', function (e) {
+            e.preventDefault();
+            var pullRequestText = "+ " + titleTask + "\n" + urlTask;
             e.clipboardData.setData('text/plain', pullRequestText);
             window.close();
         });
