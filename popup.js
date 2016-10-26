@@ -40,7 +40,7 @@ $(function() {
 
         document.getElementById('pullrequest').addEventListener('copy', function (e) {
             e.preventDefault();
-            var pullRequestText = "# Related tasks\n["+titleTask+"]("+urlTask+")\n\n# Issue description\n\n# Solution description\n\nBefore:\n\nAfter:\n\n# Test\nTests in local environment.";
+            var pullRequestText = "### Task related \n["+titleTask+"]("+urlTask+")\n\n# Problem \n\n# Solution \n\nBefore:\n\nNow:\n\n# Test\nTests in local environment.";
             e.clipboardData.setData('text/plain', pullRequestText);
             window.close();
         });
